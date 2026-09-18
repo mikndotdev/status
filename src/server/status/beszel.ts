@@ -92,6 +92,7 @@ function mapRecord(record: BeszelRecord, detail: BeszelDetail | undefined): Serv
     name,
     group: null,
     location: null,
+    role: null,
     status: toStatus(record.status),
     updatedAt: str(record.updated),
     metrics: {

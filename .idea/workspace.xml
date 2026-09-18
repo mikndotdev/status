@@ -5,54 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f2525d3-7eff-438b-8cc8-ee1fc4e5adb9" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/md-status.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AGENTS.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CLAUDE.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/generate-status-config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/validate-status-config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/api/status/route.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/template.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/mikan-cat.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/mikan-vtube.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/DecryptedText.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/VRMGlobe.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/animate-ui/components/buttons/button.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/animate-ui/primitives/animate/slot.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/animate-ui/primitives/buttons/button.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/intro/IntroScreen.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/mikn/AnimatedLogo.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/mikn/Footer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/status/BoringStatus.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/status/CoolStatus.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/status/StatusApp.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/status/StatusHeader.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/shadcn-io/spinner/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/constants/logoPaths.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/cdn-converter.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/fetcher.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/mode.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/status/config-schema.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/status/format.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/status/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/use-desktop.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/use-mode.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/utils.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/server/status/beszel.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/server/status/config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/server/status/kuma.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/server/status/snapshot.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/server/status/visibility.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/status.config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bun.lock" beforeDir="false" afterPath="$PROJECT_DIR$/bun.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/generate-status-config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/validate-status-config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/validate-status-config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/VRMGlobe.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VRMGlobe.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/status/BoringStatus.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/status/BoringStatus.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/status/CoolStatus.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/status/CoolStatus.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/status/StatusHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/status/StatusHeader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/status/config-schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/status/config-schema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/status/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/status/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/status/beszel.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/status/beszel.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/status/kuma.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/status/kuma.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/status/visibility.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/status/visibility.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/status.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/status.config.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,18 +39,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "maamokun"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;maamokun&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/mikndotdev/status.git",
-    "accountId": "4ef33813-5603-4ce4-b85c-a85044330292"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/mikndotdev/status.git&quot;,
+    &quot;accountId&quot;: &quot;4ef33813-5603-4ce4-b85c-a85044330292&quot;
   }
-}]]></component>
+}</component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="26TA8O43" />
   </component>
@@ -164,8 +133,18 @@
       <workItem from="1789402300524" duration="5356000" />
       <workItem from="1789457414874" duration="16000" />
       <workItem from="1789457441078" duration="33110000" />
-      <workItem from="1789734196184" duration="88000" />
+      <workItem from="1789734196184" duration="170000" />
+      <workItem from="1789734375652" duration="8974000" />
     </task>
+    <task id="LOCAL-00001" summary="init">
+      <option name="closed" value="true" />
+      <created>1789734302046</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1789734302046</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -2,6 +2,12 @@
 
 import useSWR from "swr";
 
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { jsonFetcher } from "@/lib/fetcher";
 import type { MonitorStatus, ServerNode, ServiceMonitor, StatusSnapshot } from "@/lib/status/types";
 import {
@@ -120,11 +126,86 @@ function Heartbeats({ beats }: { beats: ServiceMonitor["beats"] }) {
   );
 }
 
+function ServiceIcon({ service }: { service: ServiceMonitor }) {
+  if (!service.iconUrl) return null;
+  return (
+    <img
+      src={service.iconUrl}
+      alt=""
+      aria-hidden="true"
+      loading="lazy"
+      className="size-4 shrink-0 rounded-sm"
+    />
+  );
+}
+
+function ServerServiceRow({ service }: { service: ServiceMonitor }) {
+  return (
+    <div className="flex items-center gap-2 border-b border-white/5 py-2 last:border-b-0">
+      <span className={`size-2 shrink-0 rounded-full ${MONITOR_DOT[service.status]}`} />
+      <ServiceIcon service={service} />
+      <p className="min-w-0 flex-1 truncate text-xs text-foreground/90">{service.name}</p>
+      <p className="shrink-0 text-xs tabular-nums text-foreground/50">
+        {formatUptimePercent(service.uptime24h)}
+      </p>
+    </div>
+  );
+}
+
+function ServerServices({ services }: { services: ServiceMonitor[] }) {
+  if (services.length === 0) return null;
+
+  return (
+    <Accordion className="mt-3 border-t border-white/5">
+      <AccordionItem value="services" className="border-b-0">
+        <AccordionTrigger className="py-2 text-xs font-medium text-foreground/60 hover:no-underline hover:text-foreground/80">
+          Services on this server · {services.length}
+        </AccordionTrigger>
+        <AccordionContent className="pb-0">
+          {services.map((service) => (
+            <ServerServiceRow key={service.id} service={service} />
+          ))}
+        </AccordionContent>
+      </AccordionItem>
+    </Accordion>
+  );
+}
+
+function CompactServiceRow({
+  service,
+  onHover,
+}: {
+  service: ServiceMonitor;
+  onHover?: (service: ServiceMonitor | null) => void;
+}) {
+  return (
+    <div
+      onMouseEnter={() => onHover?.(service)}
+      onMouseLeave={() => onHover?.(null)}
+      className="status-card flex flex-col gap-2 border-b border-white/5 px-4 py-3 last:rounded-b-xl last:border-b-0 hover:bg-[rgba(217,115,26,0.05)] md:px-5"
+    >
+      <div className="flex min-w-0 items-center gap-2.5">
+        <span className={`size-2.5 shrink-0 rounded-full ${MONITOR_DOT[service.status]}`} />
+        <ServiceIcon service={service} />
+        <p className="truncate text-sm font-medium text-foreground">{service.name}</p>
+      </div>
+
+      <div className="flex items-center gap-4">
+        <Heartbeats beats={service.beats} />
+        <p className="shrink-0 text-sm font-semibold tabular-nums text-foreground">
+          {formatUptimePercent(service.uptime24h)}
+        </p>
+      </div>
+    </div>
+  );
+}
+
 function ServiceRow({ service }: { service: ServiceMonitor }) {
   return (
     <div className="flex flex-col gap-3 border-b border-white/5 px-4 py-3 last:border-b-0 md:flex-row md:items-center md:justify-between md:px-5 md:py-4">
       <div className="flex min-w-0 items-center gap-3">
         <span className={`size-2.5 shrink-0 rounded-full ${MONITOR_DOT[service.status]}`} />
+        <ServiceIcon service={service} />
         <div className="min-w-0">
           <p className="truncate font-medium text-foreground">{service.name}</p>
           <p className="text-xs text-foreground/50">
@@ -154,7 +235,17 @@ function serverSubtitle(metrics: ServerNode["metrics"]): string {
   return parts.length > 0 ? parts.join(" · ") : "No system details";
 }
 
-function ServerCard({ server }: { server: ServerNode }) {
+function ServerCard({
+  server,
+  services,
+  compact = false,
+  onHover,
+}: {
+  server: ServerNode;
+  services: ServiceMonitor[];
+  compact?: boolean;
+  onHover?: (server: ServerNode | null) => void;
+}) {
   const { metrics } = server;
   const dot =
     server.status === "up"
@@ -164,7 +255,13 @@ function ServerCard({ server }: { server: ServerNode }) {
         : "bg-zinc-500";
 
   return (
-    <div className="rounded-xl border border-white/10 bg-white/[0.03] p-4 md:p-5">
+    <div
+      onMouseEnter={() => onHover?.(server)}
+      onMouseLeave={() => onHover?.(null)}
+      className={`rounded-xl border border-white/10 bg-white/[0.03] p-4 md:p-5 ${
+        compact ? "status-card" : ""
+      }`}
+    >
       <div className="mb-4 flex items-start justify-between gap-3">
         <div className="min-w-0">
           <p className="truncate font-semibold text-foreground">{server.name}</p>
@@ -221,6 +318,8 @@ function ServerCard({ server }: { server: ServerNode }) {
           {[metrics.osName, metrics.arch].filter(Boolean).join(" · ")}
         </p>
       )}
+
+      <ServerServices services={services} />
     </div>
   );
 }
@@ -242,7 +341,17 @@ function SourceNotice({ label, error }: { label: string; error: string }) {
   );
 }
 
-export function BoringStatus({ initial }: { initial: StatusSnapshot }) {
+export function BoringStatus({
+  initial,
+  compact = false,
+  onServiceHover,
+  onServerHover,
+}: {
+  initial: StatusSnapshot;
+  compact?: boolean;
+  onServiceHover?: (service: ServiceMonitor | null) => void;
+  onServerHover?: (server: ServerNode | null) => void;
+}) {
   const { data, error } = useSWR<StatusSnapshot>("/api/status", jsonFetcher, {
     refreshInterval: 60_000,
     fallbackData: initial,
@@ -252,6 +361,14 @@ export function BoringStatus({ initial }: { initial: StatusSnapshot }) {
 
   const snapshot = data ?? initial;
   const stale = error != null;
+
+  const servicesByServer = new Map<string, ServiceMonitor[]>();
+  for (const service of snapshot.services) {
+    if (!service.serverId) continue;
+    const list = servicesByServer.get(service.serverId) ?? [];
+    list.push(service);
+    servicesByServer.set(service.serverId, list);
+  }
 
   const groups = groupBy(snapshot.services, (service) => service.group);
   const serverGroups = groupBy(snapshot.servers, (server) => server.group ?? "");
@@ -322,9 +439,13 @@ export function BoringStatus({ initial }: { initial: StatusSnapshot }) {
               <h3 className="border-b border-white/5 px-4 py-3 text-sm font-semibold tracking-wide text-foreground/70 uppercase md:px-5">
                 {group}
               </h3>
-              {services.map((service) => (
-                <ServiceRow key={service.id} service={service} />
-              ))}
+              {services.map((service) =>
+                compact ? (
+                  <CompactServiceRow key={service.id} service={service} onHover={onServiceHover} />
+                ) : (
+                  <ServiceRow key={service.id} service={service} />
+                ),
+              )}
             </div>
           ))
         )}
@@ -346,7 +467,13 @@ export function BoringStatus({ initial }: { initial: StatusSnapshot }) {
               )}
               <div className="grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-4">
                 {servers.map((server) => (
-                  <ServerCard key={server.id} server={server} />
+                  <ServerCard
+                    key={server.id}
+                    server={server}
+                    services={servicesByServer.get(server.id) ?? []}
+                    compact={compact}
+                    onHover={onServerHover}
+                  />
                 ))}
               </div>
             </div>

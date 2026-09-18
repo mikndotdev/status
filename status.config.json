@@ -1,38 +1,59 @@
 {
-  "generatedAt": "2026-09-16T05:11:17.114Z",
-  "groupOrder": ["Network", "Database Servers", "Core Infrastructure", "Gaming"],
+  "generatedAt": "2026-09-18T13:43:35.096Z",
+  "groupOrder": [
+    "Network",
+    "Database Servers",
+    "Core Infrastructure",
+    "Gaming"
+  ],
   "servers": [
     {
       "id": "l96w13wlrxznqwc",
-      "name": "CoreDB",
+      "name": "CoreDB US",
       "visible": true,
       "label": null,
       "group": "Database Servers",
-      "location": null
+      "location": {
+        "lat": 38,
+        "lng": -78
+      },
+      "role": null
     },
     {
       "id": "nz5gd6eniw8imlq",
       "name": "CoreDB JP",
       "visible": true,
-      "label": null,
+      "label": "CoreDB JP",
       "group": "Database Servers",
-      "location": null
+      "location": {
+        "lat": 35,
+        "lng": 138
+      },
+      "role": null
     },
     {
       "id": "22d5xfw9lu7tcls",
       "name": "CoreDB MikanDev",
       "visible": true,
-      "label": null,
+      "label": "CoreDB JP2",
       "group": "Database Servers",
-      "location": null
+      "location": {
+        "lat": 35,
+        "lng": 138
+      },
+      "role": null
     },
     {
       "id": "igpnimjo75rf1wx",
       "name": "Game Servers",
       "visible": true,
-      "label": null,
+      "label": "Game Server",
       "group": "Gaming",
-      "location": null
+      "location": {
+        "lat": 34,
+        "lng": 135
+      },
+      "role": null
     },
     {
       "id": "akn1hic0p9f4gbc",
@@ -40,7 +61,11 @@
       "visible": true,
       "label": null,
       "group": "Network",
-      "location": null
+      "location": {
+        "lat": 35,
+        "lng": 138
+      },
+      "role": "hub"
     },
     {
       "id": "ops2qdoyimrl5hy",
@@ -48,95 +73,127 @@
       "visible": true,
       "label": null,
       "group": "Core Infrastructure",
-      "location": null
+      "location": {
+        "lat": 34,
+        "lng": 135
+      },
+      "role": null
     },
     {
       "id": "pkkk2dwzivw7q0c",
-      "name": "Main App Server",
+      "name": "mikn-coolify-worker",
       "visible": true,
       "label": "Main App Server",
       "group": "Core Infrastructure",
-      "location": null
+      "location": {
+        "lat": 34,
+        "lng": 135
+      },
+      "role": null
     },
     {
       "id": "wlnxy2djhxnax81",
-      "name": "Web Server",
+      "name": "the-webserver.mikandev.tech",
       "visible": true,
       "label": "Web Server",
       "group": "Core Infrastructure",
-      "location": null
+      "location": {
+        "lat": 35,
+        "lng": 138
+      },
+      "role": null
     }
   ],
   "services": [
     {
       "id": 23,
       "name": "JP Load Balancer",
-      "visible": true,
+      "visible": false,
       "label": null,
-      "group": null
+      "group": null,
+      "server": "akn1hic0p9f4gbc",
+      "icon": null
     },
     {
       "id": 11,
       "name": "mikn",
-      "visible": true,
+      "visible": false,
       "label": null,
-      "group": null
+      "group": null,
+      "server": null,
+      "icon": null
     },
     {
       "id": 34,
       "name": "Main App Server (Osaka)",
-      "visible": true,
+      "visible": false,
       "label": null,
-      "group": null
+      "group": null,
+      "server": "pkkk2dwzivw7q0c",
+      "icon": "mikn.dev"
     },
     {
       "id": 35,
       "name": "Database Server",
-      "visible": true,
+      "visible": false,
       "label": null,
-      "group": null
+      "group": null,
+      "server": "nz5gd6eniw8imlq",
+      "icon": null
     },
     {
       "id": 36,
       "name": "Storage Server",
-      "visible": true,
+      "visible": false,
       "label": null,
-      "group": null
+      "group": null,
+      "server": "ops2qdoyimrl5hy",
+      "icon": null
     },
     {
       "id": 33,
       "name": "Container Registry",
       "visible": true,
       "label": null,
-      "group": null
+      "group": "Developer Services",
+      "server": "ops2qdoyimrl5hy",
+      "icon": "cr.mikandev.com"
     },
     {
       "id": 16,
       "name": "Git Server",
       "visible": true,
       "label": null,
-      "group": null
+      "group": "Developer Services",
+      "server": "ops2qdoyimrl5hy",
+      "icon": "code.kankitsu.space"
     },
     {
       "id": 37,
       "name": "releaselink",
       "visible": true,
       "label": null,
-      "group": null
+      "group": "Developer Services",
+      "server": null,
+      "icon": "releaselink.mikn.dev"
     },
     {
       "id": 15,
       "name": "Analytics Server",
       "visible": true,
       "label": null,
-      "group": null
+      "group": "Backend Services",
+      "server": null,
+      "icon": "analytics.mikandev.com"
     },
     {
       "id": 38,
       "name": "100masu Backend",
       "visible": true,
       "label": null,
-      "group": null
+      "group": "Gaming",
+      "server": "pkkk2dwzivw7q0c",
+      "icon": "100masu.mikn.dev"
     }
   ]
 }

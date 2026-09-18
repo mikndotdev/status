@@ -1,4 +1,4 @@
-import type { GeoLocation } from "@/lib/status/config-schema";
+import type { GeoLocation, ServerRole } from "@/lib/status/config-schema";
 
 export type ServerStatus = "up" | "down" | "paused" | "pending" | "unknown";
 export type MonitorStatus = "up" | "down" | "pending" | "maintenance" | "unknown";
@@ -26,6 +26,7 @@ export interface ServerNode {
   id: string;
   name: string;
   group: string | null;
+  role: ServerRole | null;
   location: GeoLocation | null;
   status: ServerStatus;
   updatedAt: string | null;
@@ -42,6 +43,8 @@ export interface ServiceMonitor {
   id: number;
   name: string;
   group: string;
+  serverId: string | null;
+  iconUrl: string | null;
   status: MonitorStatus;
   uptime24h: number | null;
   lastPingMs: number | null;

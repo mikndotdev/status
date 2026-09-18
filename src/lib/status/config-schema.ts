@@ -3,6 +3,8 @@ export interface GeoLocation {
   lng: number;
 }
 
+export type ServerRole = "hub";
+
 export interface ServerConfigEntry {
   id: string;
   name: string;
@@ -10,6 +12,7 @@ export interface ServerConfigEntry {
   label?: string | null;
   group?: string | null;
   location?: GeoLocation | null;
+  role?: ServerRole | null;
 }
 
 export interface ServiceConfigEntry {
@@ -18,6 +21,8 @@ export interface ServiceConfigEntry {
   visible: boolean;
   label?: string | null;
   group?: string | null;
+  server?: string | null;
+  icon?: string | null;
 }
 
 export interface StatusConfig {

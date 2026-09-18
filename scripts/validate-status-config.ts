@@ -3,8 +3,9 @@ import { fileURLToPath } from "node:url";
 
 const CONFIG_PATH = fileURLToPath(new URL("../status.config.json", import.meta.url));
 
-const SERVER_KEYS = new Set(["id", "name", "visible", "label", "group", "location"]);
-const SERVICE_KEYS = new Set(["id", "name", "visible", "label", "group"]);
+const SERVER_KEYS = new Set(["id", "name", "visible", "label", "group", "location", "role"]);
+const SERVER_ROLES = new Set(["hub"]);
+const SERVICE_KEYS = new Set(["id", "name", "visible", "label", "group", "server", "icon"]);
 
 const errors: string[] = [];
 const warnings: string[] = [];
@@ -69,6 +70,44 @@ function checkLocation(where: string, entry: Record<string, unknown>) {
   }
 }
 
+function checkServerRef(where: string, entry: Record<string, unknown>, servers: unknown) {
+  const value = entry.server;
+  if (value === undefined || value === null) return;
+
+  if (typeof value !== "string" || value.length === 0) {
+    errors.push(`${where}: server must be a server id string or null`);
+    return;
+  }
+
+  const list = Array.isArray(servers) ? servers.filter(isRecord) : [];
+  const target = list.find((server) => server.id === value);
+
+  if (!target) {
+    errors.push(
+      `${where}: server "${value}" does not match any id in the servers list`,
+    );
+    return;
+  }
+
+  if (target.visible !== true) {
+    warnings.push(
+      `${where}: server "${value}" is hidden, so this service will fall back to the Services section`,
+    );
+  }
+}
+
+function checkRole(where: string, entry: Record<string, unknown>) {
+  const value = entry.role;
+  if (value === undefined || value === null) return;
+  if (typeof value !== "string" || !SERVER_ROLES.has(value)) {
+    errors.push(`${where}: role must be null or one of ${[...SERVER_ROLES].join(", ")}`);
+    return;
+  }
+  if (value === "hub" && entry.location == null) {
+    warnings.push(`${where}: role "hub" has no coordinates, so signal arcs cannot start from it`);
+  }
+}
+
 function checkDuplicates(label: string, ids: unknown[]) {
   const seen = new Set<string>();
   for (const id of ids) {
@@ -122,6 +161,7 @@ function main() {
       }
       checkCommon(where, entry);
       checkLocation(where, entry);
+      checkRole(where, entry);
       checkUnknownKeys(where, entry, SERVER_KEYS);
     });
     checkDuplicates(
@@ -141,6 +181,8 @@ function main() {
         errors.push(`${where}: id must be an integer (Uptime Kuma monitor id)`);
       }
       checkCommon(where, entry);
+      checkOptionalString(where, entry, "icon");
+      checkServerRef(where, entry, servers);
       checkUnknownKeys(where, entry, SERVICE_KEYS);
     });
     checkDuplicates(
@@ -196,6 +238,15 @@ function main() {
   if (errors.length === 0 && visibleServers === 0 && visibleServices === 0) {
     warnings.push(
       'nothing is visible — the status page will render empty. Set "visible": true on the entries you want published.',
+    );
+  }
+
+  const hubs = (Array.isArray(servers) ? servers : [])
+    .filter(isRecord)
+    .filter((entry) => entry.role === "hub" && entry.visible === true);
+  if (hubs.length > 1) {
+    errors.push(
+      `servers: ${hubs.length} visible servers are marked role "hub" — only one is allowed`,
     );
   }
 

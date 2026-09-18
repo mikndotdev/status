@@ -21,6 +21,21 @@ config.services?.forEach((entry, order) => serviceEntries.set(entry.id, { entry,
 const groupRank = new Map<string, number>();
 config.groupOrder?.forEach((name, index) => groupRank.set(name, index));
 
+const visibleServerIds = new Set<string>();
+config.servers?.forEach((entry) => {
+  if (entry.visible) visibleServerIds.add(entry.id);
+});
+
+const FAVICONE = "https://favicone.com";
+const ABSOLUTE_URL = /^https?:\/\//i;
+
+function resolveIcon(icon: string | null | undefined): string | null {
+  const value = icon?.trim();
+  if (!value) return null;
+  if (ABSOLUTE_URL.test(value)) return value;
+  return `${FAVICONE}/${encodeURIComponent(value)}?s=64`;
+}
+
 function rankOf(group: string | null | undefined): number {
   if (group == null || group === "") return UNRANKED;
   return groupRank.get(group) ?? UNRANKED;
@@ -55,6 +70,7 @@ export function applyServerConfig(servers: ServerNode[]): ServerNode[] {
         name: match.entry.label ?? server.name,
         group,
         location: match.entry.location ?? null,
+        role: match.entry.role ?? null,
       },
     });
   }
@@ -69,6 +85,7 @@ export function applyServiceConfig(services: ServiceMonitor[]): ServiceMonitor[]
     const match = serviceEntries.get(service.id);
     if (!match || !match.entry.visible) continue;
     const group = match.entry.group ?? service.group;
+    const serverId = match.entry.server ?? null;
     ordered.push({
       rank: rankOf(group),
       order: match.order,
@@ -76,6 +93,8 @@ export function applyServiceConfig(services: ServiceMonitor[]): ServiceMonitor[]
         ...service,
         name: match.entry.label ?? service.name,
         group,
+        serverId: serverId && visibleServerIds.has(serverId) ? serverId : null,
+        iconUrl: resolveIcon(match.entry.icon),
       },
     });
   }

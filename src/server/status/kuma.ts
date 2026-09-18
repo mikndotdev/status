@@ -126,6 +126,8 @@ export async function getKumaServices(): Promise<KumaResult> {
           id,
           name,
           group: groupName,
+          serverId: null,
+          iconUrl: null,
           status: last?.status ?? "unknown",
           uptime24h: num(uptimeList[`${id}_24`]),
           lastPingMs: last?.ping ?? null,
