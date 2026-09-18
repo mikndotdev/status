@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6f2525d3-7eff-438b-8cc8-ee1fc4e5adb9" name="Changes" comment="init">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/md-status.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AGENTS.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CLAUDE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/generate-status-config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/validate-status-config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/api/status/route.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/template.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/mikan-cat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/mikan-vtube.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/DecryptedText.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/VRMGlobe.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/animate-ui/components/buttons/button.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/animate-ui/primitives/animate/slot.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/animate-ui/primitives/buttons/button.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/intro/IntroScreen.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/mikn/AnimatedLogo.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/mikn/Footer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/status/BoringStatus.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/status/CoolStatus.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/status/StatusApp.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/status/StatusHeader.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ui/shadcn-io/spinner/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/constants/logoPaths.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/cdn-converter.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/fetcher.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/mode.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/status/config-schema.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/status/format.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/status/types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/use-desktop.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/use-mode.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/utils.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/server/status/beszel.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/server/status/config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/server/status/kuma.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/server/status/snapshot.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/server/status/visibility.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/status.config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bun.lock" beforeDir="false" afterPath="$PROJECT_DIR$/bun.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "maamokun"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/mikndotdev/status.git",
+    "accountId": "4ef33813-5603-4ce4-b85c-a85044330292"
+  }
+}]]></component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="26TA8O43" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="3JKGMYc1TXh3Z5GIqKHZPgmGgai" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;bun&quot;,
+    &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
+    &quot;js.debugger.nextJs.config.created.server&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/maamo/Projects/md-status/src/components/mikn&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;bun&quot;,
+    &quot;org.rust.first.attach.projects&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/maamo/Projects/md-status/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/mikn" />
+      <recent name="$PROJECT_DIR$/src/assets/img" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.Next.js: server-side">
+    <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
+      <method v="2" />
+    </configuration>
+    <configuration name="Next.js: server-side" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="RustProjectSettings">
+    <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-cffe25b9f5b3-intellij.indexing.shared.core-IU-253.28294.334" />
+        <option value="bundled-js-predefined-d6986cc7102b-c7e53b3be11b-JavaScript-IU-253.28294.334" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6f2525d3-7eff-438b-8cc8-ee1fc4e5adb9" name="Changes" comment="" />
+      <created>1758334671855</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1758334671855</updated>
+      <workItem from="1789402300524" duration="5356000" />
+      <workItem from="1789457414874" duration="16000" />
+      <workItem from="1789457441078" duration="33110000" />
+      <workItem from="1789734196184" duration="88000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init" />
+    <option name="LAST_COMMIT_MESSAGE" value="init" />
+  </component>
+</project>

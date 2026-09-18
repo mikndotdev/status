@@ -1,0 +1,142 @@
+{
+  "generatedAt": "2026-09-16T05:11:17.114Z",
+  "groupOrder": ["Network", "Database Servers", "Core Infrastructure", "Gaming"],
+  "servers": [
+    {
+      "id": "l96w13wlrxznqwc",
+      "name": "CoreDB",
+      "visible": true,
+      "label": null,
+      "group": "Database Servers",
+      "location": null
+    },
+    {
+      "id": "nz5gd6eniw8imlq",
+      "name": "CoreDB JP",
+      "visible": true,
+      "label": null,
+      "group": "Database Servers",
+      "location": null
+    },
+    {
+      "id": "22d5xfw9lu7tcls",
+      "name": "CoreDB MikanDev",
+      "visible": true,
+      "label": null,
+      "group": "Database Servers",
+      "location": null
+    },
+    {
+      "id": "igpnimjo75rf1wx",
+      "name": "Game Servers",
+      "visible": true,
+      "label": null,
+      "group": "Gaming",
+      "location": null
+    },
+    {
+      "id": "akn1hic0p9f4gbc",
+      "name": "JP Load Balancer",
+      "visible": true,
+      "label": null,
+      "group": "Network",
+      "location": null
+    },
+    {
+      "id": "ops2qdoyimrl5hy",
+      "name": "Storage Server",
+      "visible": true,
+      "label": null,
+      "group": "Core Infrastructure",
+      "location": null
+    },
+    {
+      "id": "pkkk2dwzivw7q0c",
+      "name": "Main App Server",
+      "visible": true,
+      "label": "Main App Server",
+      "group": "Core Infrastructure",
+      "location": null
+    },
+    {
+      "id": "wlnxy2djhxnax81",
+      "name": "Web Server",
+      "visible": true,
+      "label": "Web Server",
+      "group": "Core Infrastructure",
+      "location": null
+    }
+  ],
+  "services": [
+    {
+      "id": 23,
+      "name": "JP Load Balancer",
+      "visible": true,
+      "label": null,
+      "group": null
+    },
+    {
+      "id": 11,
+      "name": "mikn",
+      "visible": true,
+      "label": null,
+      "group": null
+    },
+    {
+      "id": 34,
+      "name": "Main App Server (Osaka)",
+      "visible": true,
+      "label": null,
+      "group": null
+    },
+    {
+      "id": 35,
+      "name": "Database Server",
+      "visible": true,
+      "label": null,
+      "group": null
+    },
+    {
+      "id": 36,
+      "name": "Storage Server",
+      "visible": true,
+      "label": null,
+      "group": null
+    },
+    {
+      "id": 33,
+      "name": "Container Registry",
+      "visible": true,
+      "label": null,
+      "group": null
+    },
+    {
+      "id": 16,
+      "name": "Git Server",
+      "visible": true,
+      "label": null,
+      "group": null
+    },
+    {
+      "id": 37,
+      "name": "releaselink",
+      "visible": true,
+      "label": null,
+      "group": null
+    },
+    {
+      "id": 15,
+      "name": "Analytics Server",
+      "visible": true,
+      "label": null,
+      "group": null
+    },
+    {
+      "id": 38,
+      "name": "100masu Backend",
+      "visible": true,
+      "label": null,
+      "group": null
+    }
+  ]
+}
